@@ -10,8 +10,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<String> mNames = new ArrayList<>();
-    private ArrayList<String> mImageUrls = new ArrayList<>();
+
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     @Override
@@ -21,7 +20,9 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.rv_main);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        RecyclerViewAdapter rvAdapter = new RecyclerViewAdapter();
+        FoodAdapter foodAdapter = new FoodAdapter();
+        foodAdapter.setData(FoodDatabase.getAllFoodItems());
+        recyclerView.setAdapter(foodAdapter);
     }
 
 }

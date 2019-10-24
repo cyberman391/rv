@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">rv</string>
+    <string name="foodCost">this is a detail</string>
+    <string name="foodName">this is a headline</string>
+    <string name="foodContext">this was how long ago</string>
+    <string name="newsphoto">TODO</string>
 </resources>

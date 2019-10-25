@@ -23,11 +23,12 @@ public class DetailActivity extends AppCompatActivity {
         headlineTextView = findViewById(R.id.foodName);
         authorTextView = findViewById(R.id.foodCost);
         contentTextView = findViewById(R.id.foodContext);
-        //imageView = findViewById(R.id.detailImage);
+        imageView = findViewById(R.id.detailImage);
 
         // Set the views to show the data of our object
         headlineTextView.setText(foodItems.getFoodName());
         authorTextView.setText(foodItems.getFoodCost());
         contentTextView.setText(foodItems.getContext());
+        imageView.setImageResource(foodItems.getImageDrawable());
     }
 }

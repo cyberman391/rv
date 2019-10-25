@@ -5,14 +5,24 @@ public class FoodItems {
     private String foodName;
     private String foodCost;
     private String context;
+    private double foodPrice;
     private int imageDrawable;
 
-    public FoodItems(int foodID, String foodName, String foodCost, String context, int imageDrawable) {
+    public FoodItems(int foodID, String foodName, String foodCost, String context, double foodPrice, int imageDrawable) {
         this.foodID = foodID;
         this.foodName = foodName;
         this.foodCost = foodCost;
         this.context = context;
+        this.foodPrice = foodPrice;
         this.imageDrawable = imageDrawable;
+    }
+
+    public double getFoodPrice() {
+        return foodPrice;
+    }
+
+    public void setFoodPrice(double foodPrice) {
+        this.foodPrice = foodPrice;
     }
 
     public int getFoodID() {

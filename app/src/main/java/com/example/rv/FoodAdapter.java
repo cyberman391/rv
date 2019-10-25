@@ -47,7 +47,27 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ArticleViewHol
 
         holder.headlineTextView.setText(foodItemAtPosition.getFoodName());
         holder.summaryTextView.setText(foodItemAtPosition.getContext());
+        holder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Context context = view.getContext();
 
+                Intent intent = new Intent(context, DetailActivity.class);
+                intent.putExtra("FoodID", foodItemAtPosition.getFoodID());
+                context.startActivity(intent);
+            }
+        });
+        holder.shareImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Context context = view.getContext();
+                Intent intent = new Intent(Intent.ACTION_SEND);
+
+                intent.putExtra(Intent.EXTRA_TEXT, foodItemAtPosition.getFoodName());
+                intent.setType("text/plain");
+                context.startActivity(intent);
+            }
+        });
 
         holder.itemImageView.setImageResource(foodItemAtPosition.getImageDrawable());
     }
@@ -70,6 +90,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ArticleViewHol
             view = v;
             headlineTextView = v.findViewById(R.id.foodName);
             summaryTextView = v.findViewById(R.id.foodCost);
+            shareImageView = v.findViewById(R.id.newsShareButton);
             itemImageView = v.findViewById(R.id.newsPhoto);
         }
     }
